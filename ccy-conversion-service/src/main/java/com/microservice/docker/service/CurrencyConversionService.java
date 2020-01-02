@@ -1,5 +1,6 @@
 package com.microservice.docker.service;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import com.microservice.docker.domain.CurrencyConversionRate;
@@ -19,6 +20,6 @@ public class CurrencyConversionService {
         Optional<CurrencyConversionRate> oCurrencyConversionRate = repository
                 .findBySourceCurrencyAndTargetCurrency(sourceCcy, targetCcy);
 
-        return oCurrencyConversionRate.orElse(new CurrencyConversionRate(sourceCcy, targetCcy, 0.0f));
+        return oCurrencyConversionRate.orElse(new CurrencyConversionRate(sourceCcy, targetCcy, BigDecimal.ZERO));
     }
 }

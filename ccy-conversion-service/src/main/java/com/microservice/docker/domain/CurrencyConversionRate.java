@@ -1,5 +1,7 @@
 package com.microservice.docker.domain;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,12 +19,12 @@ public class CurrencyConversionRate {
 
     private String targetCurrency;
 
-    private float exchangeRate;
+    private BigDecimal exchangeRate;
 
     public CurrencyConversionRate() {
     }
 
-    public CurrencyConversionRate(String sourceCurrency, String targetCurrency, float exchangeRate) {
+    public CurrencyConversionRate(String sourceCurrency, String targetCurrency, BigDecimal exchangeRate) {
         this.sourceCurrency = sourceCurrency;
         this.targetCurrency = targetCurrency;
         this.exchangeRate = exchangeRate;
@@ -44,11 +46,11 @@ public class CurrencyConversionRate {
         this.targetCurrency = targetCurrency;
     }
 
-    public float getExchangeRate() {
+    public BigDecimal getExchangeRate() {
         return exchangeRate;
     }
 
-    public void setExchangeRate(float exchangeRate) {
+    public void setExchangeRate(BigDecimal exchangeRate) {
         this.exchangeRate = exchangeRate;
     }
 
