@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "currencyconversionservice", url = "${CCY_CONVERSION_SERVICE: http://localhost:8080/conversionservice/}", fallback = CurrencyConversionServiceFallback.class)
+@FeignClient(value = "currencyconversionservice", url = "${CCY_CONVERSION_SERVICE:localhost:8080/conversionservice/}", fallback = CurrencyConversionServiceFallback.class)
 public interface CurrencyConversionServiceProxy {
 
     @GetMapping(value = "/conversionrate/from/{sourceCurrency}/to/{targetCurrency}", produces = MediaType.APPLICATION_JSON_VALUE)

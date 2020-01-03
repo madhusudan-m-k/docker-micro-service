@@ -24,7 +24,12 @@ public class CurrencyExchangeController {
     public CurrencyExchangeController() {
     }
 
-    @GetMapping(value = "/exchangeccy", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/")
+    public String helloCurrencyExchangeController() {
+        return "Hello from CurrencyExchangeController";
+    }
+
+    @GetMapping(value = "/exchangeccy/from/{sourceCcy}/to/{targetCcy}/amount/{sourceCcyAmount}", produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<CurrencyExchange> exchangeCurrency(@PathVariable("sourceCcy") String sourceCcy,
             @PathVariable("targetCcy") String targetCcy, @PathVariable("sourceCcyAmount") BigDecimal sourceCcyAmount) {
 
