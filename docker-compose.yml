@@ -11,7 +11,7 @@ services:
       - "8080:${CCY_CONVERSION_SERVER_PORT}"
     environment:
       RDS_HOST_NAME: currency-conversion-db
-    container_name: currency-conversion-services
+    container_name: currency-conversion-services-cn
     networks:
       - currency-bridge
     depends_on:
@@ -30,7 +30,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
-    container_name: ccy-conversion-data
+    container_name: ccy-conversion-data-cn
     networks:
       - currency-bridge
     volumes:
@@ -44,7 +44,7 @@ services:
       - .env
     ports:
       - "9090:${CCY_EXCHANGE_SERVER_PORT}"
-    container_name: currency-exchange-services
+    container_name: currency-exchange-services-cn
     networks:
       - currency-bridge
 
