@@ -249,6 +249,12 @@ Abbreviated command -
 docker run -dit --publish 3307:3306 --name mysql --env MYSQL_ROOT_PASSWORD=rootpassword --env MYSQL_DATABASE=tododb --env MYSQL_USER=todouser --env MYSQL_PASSWORD=todopassword mysql:8.0.18
 ```
 
+Using environment file for setting up enviornment variables
+
+```
+docker container run -dit -p 9090:9090 --name currency-exchange-service --env-file .env --network ccyconversionservice_currency-bridge currency-exchange-service:0.0.1-SNAPSHOT
+```
+
 Run WebApp connecting to the DB container -
 \*\*Link (Deprecated approach)
 
@@ -399,6 +405,13 @@ docker-compose unpause
 ```
 
 docker-compose stop
+```
+
+###start all containers created by docker-compose
+
+```
+
+docker-compose start
 ```
 
 ###kill all containers started by docker-compose
